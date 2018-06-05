@@ -1,0 +1,35 @@
+{
+  "name": "@typescript-plus/mixin-decorator",
+  "version": "0.1.0",
+  "description": "A TypeScript decorator for creating mixin classes easy.",
+  "repository": "typescript-plus/mixin-decorator",
+  "license": "MIT",
+  "author": "mosop",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dist": "npm-run-all dist:clean dist:build",
+    "dist:build": "tsc -p tsconfig.dist.json",
+    "dist:clean": "rm -rf dist",
+    "doc": "typedoc --mode file --excludeNotExported --out docs/api src",
+    "lint": "tslint -p . -t verbose && tslint -p . -c node_modules/@myowncake/config-tslint/dist/tslint.no-unused-variable.json -t verbose",
+    "test": "npm run testx -- 'spec/**/*.spec.ts'",
+    "testx": "ts-node node_modules/jasmine/bin/jasmine",
+    "posttest": "npm run lint"
+  },
+  "devDependencies": {
+    "@myowncake/config-tslint": "^0.1.0",
+    "@myowncake/config-typescript": "^0.1.0",
+    "@types/jasmine": "^2.8.7",
+    "@types/node": "^8.10.17",
+    "jasmine": "^2.99.0",
+    "npm-run-all": "^4.1.3",
+    "ts-node": "^6.0.5",
+    "tslint": "^5.10.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.4"
+  }
+}
